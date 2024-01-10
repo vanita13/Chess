@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess by Vanita</title>
+    <style>
+        td{
+            background-color: rosybrown;
+            
+            padding: 0.2em;
+            text-align: center;
+            width: 4em;
+            height: 4em;
+        
+        }
+        table{
+            
+            
+            border-width: 0.2em;
+            border-style: solid;
+            background-color: lavenderblush;
+        }
+        .displayrow{
+           background-color: inherit;
+           width: 1em;
+           height: 4em;
+           text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 style="text-align: center;">
+            Chess Board
+        </h1>
+    </div>
+    <table id="chessboard">
+        <tr id="Head1">
+
+        </tr>
+        <script>
+            var th = document.createElement("TH");
+            document.getElementById("Head1").appendChild(th);
+            for (var colname = 97; colname <= 104; colname++) {
+                   th = document.createElement("TH");
+                   document.getElementById("Head1").appendChild(th);
+                   th.innerHTML = String.fromCharCode(colname);
+
+               }
+            var ChessPeices = [
+                ["♜","♞","♝","♛","♚","♝","♞","♜"],
+                ["♟","♟","♟","♟","♟","♟","♟","♟"],
+                [" "," "," "," "," "," "," "," "],
+                [" "," "," "," "," "," "," "," "],
+                [" "," "," "," "," "," "," "," "],
+                [" "," "," "," "," "," "," "," "],
+                ["♟","♟","♟","♟","♟","♟","♟","♟"],
+                ["♜","♞","♝","♛","♚","♝","♞","♜"]
+            ];
+
+            for (let i = 0; i < 8; i++) {
+
+                var tr = document.createElement("TR");
+                document.getElementById("chessboard").appendChild(tr);
+                var td = document.createElement("TD");
+                tr.appendChild(td);
+                td.innerHTML = i;
+                td.className = "displayrow";
+                for (let j =0;j<8;j++){
+                  var td = document.createElement("TD");
+                    td.innerHTML = ChessPeices[i][j];
+                    tr.appendChild(td);
+                }
+                var td = document.createElement("TD");
+                tr.appendChild(td);
+                td.innerHTML = i;
+                td.className = "displayrow";
+               
+            }
+            var trHead = document.createElement("TR")
+            trHead.id = "Head2"
+            document.getElementById("chessboard").appendChild(trHead);
+            var th = document.createElement("TH");
+            document.getElementById("Head2").appendChild(th);
+            for (var colname = 97; colname <= 104; colname++) {
+                   th = document.createElement("TH");
+                   document.getElementById("Head2").appendChild(th);
+                   th.innerHTML = String.fromCharCode(colname);
+
+               }
+        </script>
+        
+
+        </table>
+
+
+
+</body>
+</html>
